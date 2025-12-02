@@ -1,5 +1,5 @@
 # MMPG
-This is the official implementation for the paper "M^2PG: MoE-based Adaptive Multi-Perspective Graph Fusion for Protein Representation Learning".
+This is the official implementation for the paper "MMPG: MoE-based Adaptive Multi-Perspective Graph Fusion for Protein Representation Learning".
 
 
 ## Dependencies
