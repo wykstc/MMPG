@@ -1,0 +1,3 @@
+[submodule "preprocess_korp/src"]
+	path = preprocess_korp/src
+	url = git@github.com:sgallon-rin/Korp.git
