@@ -1,0 +1,3 @@
+[submodule "Korp"]
+	path = src
+	url = git@github.com:sgallon-rin/Korp.git

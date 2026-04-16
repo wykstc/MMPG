@@ -1,5 +1,18 @@
 # MMPG
-This is the official implementation for the paper ["MMPG: MoE-based Adaptive Multi-Perspective Graph Fusion for Protein Representation Learning"](https://ojs.aaai.org/index.php/AAAI/article/view/37096).
+This is the official implementation for AAAI26 paper ["MMPG: MoE-based Adaptive Multi-Perspective Graph Fusion for Protein Representation Learning"](https://ojs.aaai.org/index.php/AAAI/article/view/37096)/[(arXiv version)](https://arxiv.org/abs/2601.10157).
+
+## Overview
+
+Graph Neural Networks (GNNs) have been widely adopted for Protein Representation Learning (PRL), as residue interaction networks can be naturally represented as graphs.
+Current GNN-based PRL methods typically rely on single-perspective graph construction strategies, which capture partial properties of residue interactions, resulting in incomplete protein representations.
+
+To address this limitation, we propose MMPG, a framework that **constructs protein graphs from multiple perspectives and adaptively fuses them via Mixture of Experts (MoE)** for PRL.
+MMPG constructs graphs from **physical, chemical, and geometric perspectives** to characterize different properties of residue interactions. 
+To capture both perspective-specific features and their synergies, we develop an MoE module, which dynamically routes perspectives to specialized experts, where experts learn intrinsic features and cross-perspective interactions. 
+We quantitatively verify that MoE automatically specializes experts in **modeling distinct levels of interaction**—from individual representations, to pairwise inter-perspective synergies, and ultimately to a global consensus across all perspectives. 
+Through integrating this multi-level information, MMPG produces superior protein representations and achieves advanced performance on four different downstream protein tasks.
+
+![model_structure](./model_structure.jpg)
 
 
 ## Dependencies
@@ -7,10 +20,10 @@ This is the official implementation for the paper ["MMPG: MoE-based Adaptive Mul
 - Python 3.10.14
 - bio==1.7.1
 - torch-2.1.0+cu121
--Torch-geometric 2.6.0
+- Torch-geometric 2.6.0
 
 ## Dataset
-We use the four datasets, which can be found at:
+We use four datasets, which can be found at:
 
 https://github.com/DeepGraphLearning/torchdrug
 
@@ -18,6 +31,7 @@ https://github.com/divelab/DIG
 
 To preprocess the data, please use the scripts from dataset fold.
 
+Additionally, please use the scripts in `./preprocess_korp` to compute KORP pairwise potential, which is necessary for physical-energetic perspective.
 
 ## Usage
 
